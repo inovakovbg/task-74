@@ -9,9 +9,9 @@ function App() {
   
 
   const number=useMemo( () => {
-      if (text.match(/^[0-9]+$/)) {return 'fa-check'}
+      if (text.match(/^[0-9]+$/)) {return 'fas fa-check'}
 
-      return 'fa fa-times'
+      return 'fas fa-times'
   },[text]);
 
 
@@ -37,7 +37,7 @@ function App() {
           <i className={number} />
         </span> 
 
-    {/* <h2>{number}</h2> */}
+   
    
       </div>
     </div>
