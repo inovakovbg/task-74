@@ -1,11 +1,24 @@
 import "./App.css";
-import React, {useState} from "react";
+import React, {Component, useMemo, useState} from "react";
+import { render } from "react-dom";
 
 function App() {
 
-  const [text , setText] = useState("Primery");
+  const [text , setText] = useState("");
+
+  
+
+  const number=useMemo( () => {
+      if (text.match(/^[0-9]+$/)) {return 'fa-check'}
+
+      return 'fa fa-times'
+  },[text]);
+
+
   // const name="fa fa-times";
-  const name="fa-check";
+  // const name="fa-check";
+
+  
 
   return (
     <div className="App">
@@ -21,10 +34,11 @@ function App() {
 
 
         <span className="icon is-small is-right">
-          <i className={name} />
+          <i className={number} />
         </span> 
 
-    <h2>{text}</h2>
+    {/* <h2>{number}</h2> */}
+   
       </div>
     </div>
   );
